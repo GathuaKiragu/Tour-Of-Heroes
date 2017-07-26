@@ -10,25 +10,26 @@ export class Hero {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  template: `<h1>{{title}}</h1>
-  <div>
-  <h2>{{hero.name}} details!</h2>
-  <h2><label>name: </label></h2>
-  <input [(ngModel)]="hero.name" placeholder="name">
-</div>`
+  template: `
+  <h2>My Heroes</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <span class="badge">{{hero.id}}. </span>{{hero.name}}
+     </li>
+  </ul>`
 })
 
 
 export class AppComponent {
   title = 'Tour of Heroes';
   heroes = HEROES;
-// Assigning hero object with values
+  // Assigning hero object with values
   // hero: Hero = {
   // id: 1,
   // name: 'Windstormyy'
   // }
 }
-// Hweoes Array
+// Heroes Array
 const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
